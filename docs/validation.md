@@ -1,7 +1,7 @@
 # 验证记录 · 0.1.0
 
 验证日期：2026-10-02（UTC）  
-实际环境：Linux，Python 3.12.14  
+首次本地验证环境：Linux，Python 3.12.14；后续远端 CI 见下方精确提交记录  
 测试材料：仓库合成 JSON；无真实订单、企业聊天、个人账号或凭据
 
 ## 实际通过
@@ -43,10 +43,17 @@ python -m dots_workflow trip examples/trip.json --out out/trip
 
 发布审阅包含来源、测试记录、审稿记录、草稿、图像简报和指标；它没有实际生成图像或外发内容。HTML 注入与外部资源隔离有自动测试，未声称完成多浏览器视觉验收。
 
+## GitHub 发布与远端 CI 已验证
+
+验证日期：2026-10-02（UTC）。[公开仓库](https://github.com/siyuanfeng636-cpu/dots-workflow-kit)已发布；本次验证对应 main 上的提交 [`e152d206dc8ca88e91a1151545a7dc1b1b4481a1`](https://github.com/siyuanfeng636-cpu/dots-workflow-kit/commit/e152d206dc8ca88e91a1151545a7dc1b1b4481a1)。从公开仓库重新克隆后，100 项测试通过。
+
+[GitHub Actions 运行 36955139170](https://github.com/siyuanfeng636-cpu/dots-workflow-kit/actions/runs/36955139170)的 Python 3.10、3.11、3.12、3.13 四个 Linux 作业均成功；每个作业的单元测试、编译检查和示例冒烟步骤均通过。
+
+这条记录仅适用于上述提交与运行，不代表后续文档更新提交或其他新提交已经通过 CI。
+
 ## 尚未验证
 
-- GitHub 托管与对应 commit 的远端 CI：当前只创建了 CI 配置，远端结果以实际执行为准
-- Python 3.10、3.11、3.13 与 Windows/macOS：CI 定义覆盖 3.10–3.13 的 Linux，当前本地只实跑 3.12.14
+- Windows/macOS：首次本地测试与上述远端 CI 均为 Linux
 - pip / wheel 构建、包索引发布与全局安装：快速开始无需这些步骤
 - Codex 自动发现 skill、真实模型按流程完成任务、dots 账号/插件或其他 agent 集成
 - 实时来源抓取、事实真伪、原作者效果复现、任何商业收益

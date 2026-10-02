@@ -66,7 +66,7 @@ python -m unittest discover -s tests -v
 python -m compileall -q dots_workflow tests
 ```
 
-CI 定义覆盖 Python 3.10–3.13；提交后需检查对应 commit 的实际 CI 结果，不能把工作流文件存在写成 CI 已通过。当前本地验证环境与结果见测试记录。
+首次本地测试使用 Linux / Python 3.12.14；提交 `e152d206dc8ca88e91a1151545a7dc1b1b4481a1` 的 Python 3.10–3.13 Linux CI 已全部通过，精确运行链接见[测试记录](docs/validation.md#github-发布与远端-ci-已验证)。后续提交仍需核对各自 CI，不能沿用此前的绿灯。
 
 运行代码只用标准库。可选的 `pip install .` 打包安装会使用 setuptools 构建依赖，可能触发包索引访问；快速开始不需要这一步。
 

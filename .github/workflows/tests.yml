@@ -1,0 +1,27 @@
+name: Offline workflow checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run semantic and security tests without dependencies
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python
+        run: python -m compileall -q dots_workflow tests
+      - name: Smoke test synthetic examples
+        run: |
+          python -m dots_workflow evidence examples/evidence.json --out out/evidence
+          python -m dots_workflow content examples/content.json --out out/content
+          python -m dots_workflow requirements examples/requirements.json --out out/requirements
+          python -m dots_workflow trip examples/trip.json --out out/trip

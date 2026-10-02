@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dots-workflow-kit"
+version = "0.1.0"
+description = "Offline Chinese content workbench and conservative evidence, requirement, trip checks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = []
+
+[project.scripts]
+dots-workflow = "dots_workflow.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["dots_workflow*"]

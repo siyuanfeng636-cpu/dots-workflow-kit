@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "description": "Entirely fictional requirement records; no real project, people, decisions, or sources.",
+  "sources": [
+    {"id": "synthetic-review", "title": "Fictional Lantern demo review", "kind": "synthetic"},
+    {"id": "synthetic-followup", "title": "Fictional Lantern follow-up", "kind": "synthetic"}
+  ],
+  "records": [
+    {"id": "format-original", "subject": "export-format", "scope": "fictional-lantern", "status": "decision", "value": "PDF", "decided_at": "2026-09-01T10:00:00+00:00", "source_ids": ["synthetic-review"]},
+    {"id": "format-replacement", "subject": "export-format", "scope": "fictional-lantern", "status": "decision", "value": "HTML", "decided_at": "2026-09-02T10:00:00+00:00", "source_ids": ["synthetic-followup"], "supersedes": ["format-original"]},
+    {"id": "format-proposal", "subject": "export-format", "scope": "fictional-lantern", "status": "proposal", "value": "Markdown", "decided_at": "2026-09-03T10:00:00+00:00", "source_ids": ["synthetic-followup"]},
+    {"id": "keyboard-navigation", "subject": "keyboard-navigation", "scope": "fictional-lantern", "status": "decision", "value": true, "decided_at": "2026-09-01T10:00:00+00:00", "source_ids": ["synthetic-review"]}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "trip_id": "synthetic-trip-2026-10",
+  "notes": "完全合成示例，不代表真实班次、预订或换乘耗时。",
+  "sources": [
+    {"id": "S1", "title": "合成交通记录", "kind": "synthetic"},
+    {"id": "S2", "title": "合成住宿记录", "kind": "synthetic"}
+  ],
+  "segments": [
+    {
+      "id": "L2", "mode": "rail",
+      "from": {"city": "上海", "station": "上海虹桥站"},
+      "to": {"city": "杭州", "station": "杭州东站"},
+      "departure": "2026-10-03T09:40:00+08:00",
+      "arrival": "2026-10-03T10:40:00+08:00",
+      "source_ids": ["S1"], "booking_status": "unconfirmed"
+    },
+    {
+      "id": "L1", "mode": "rail",
+      "from": {"city": "南京", "station": "南京站"},
+      "to": {"city": "上海", "station": "上海站"},
+      "departure": "2026-10-03T07:00:00+08:00",
+      "arrival": "2026-10-03T09:00:00+08:00",
+      "source_ids": ["S1"], "booking_status": "confirmed"
+    }
+  ],
+  "connections": [
+    {"from_segment": "L1", "to_segment": "L2", "min_buffer_minutes": 60, "transfer_minutes": null}
+  ],
+  "required_nights": ["2026-10-03", "2026-10-04"],
+  "lodgings": [
+    {"id": "H1", "trip_id": "synthetic-trip-2026-10", "city": "杭州", "check_in": "2026-11-03", "check_out": "2026-11-05", "source_ids": ["S2"]}
+  ]
+}

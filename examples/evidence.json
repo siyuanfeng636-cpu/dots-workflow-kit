@@ -1,0 +1,5 @@
+{
+  "synthetic": true,
+  "sources": [{"id": "S1", "title": "合成作者笔记", "kind": "author_reported", "status": "synthetic", "text": "我用助手生成了一份草稿，但没有发送。", "url": "https://example.invalid/post"}],
+  "claims": [{"id": "C1", "text": "作者自述生成了一份未发送草稿", "source_ids": ["S1"], "evidence_level": "author_report"}]
+}

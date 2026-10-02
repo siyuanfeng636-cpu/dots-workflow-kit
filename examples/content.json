@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "brief": {
+    "audience": "经常在群聊和会议纪要之间核对需求的中文产品团队",
+    "goal": "展示为何新建议不能自动覆盖旧决定",
+    "platform": "中文图文平台草稿",
+    "angle": "八版需求不一定有八次变更，先找出谁真正作了决定",
+    "cta": "复制合成示例，在本地看一次冲突报告"
+  },
+  "sources": [
+    {"id": "S1", "title": "合成会议记录", "kind": "synthetic", "status": "synthetic", "text": "10月1日，负责人决定演示项目导出 PDF；10月2日，有人建议试试 PNG，但没有撤回 PDF 决定。"},
+    {"id": "S2", "title": "合成作者演示笔记", "kind": "author_reported", "status": "synthetic", "url": "https://example.invalid/demo", "text": "作者自述：把记录整理成证据表后，发现一个待确认的新建议。没有发送任何群消息。"}
+  ],
+  "claims": [
+    {"id": "C1", "text": "在这份合成记录里，PNG 只是建议，不能认定已替代 PDF 决定。", "source_ids": ["S1"], "evidence_level": "inference"},
+    {"id": "C2", "text": "合成作者自述发现了待确认建议；这个说法没有独立复现。", "source_ids": ["S2"], "evidence_level": "author_report"},
+    {"id": "C3", "text": "我更愿意先列待确认问题，再修改实施清单。", "source_ids": [], "evidence_level": "opinion"}
+  ],
+  "tests": [],
+  "draft": {
+    "title": "最后一条消息，不一定是最终需求",
+    "body": "先看一个合成案例：周三决定导出 PDF，周四有人说 PNG 也许更好。\n这只能证明多了一个建议，不能证明原决定取消了。把原话、来源位置、提出者角色和明确替代关系列在一起，就能把要问的问题缩小为：要不要正式改成 PNG？\n上面的作者演示属于自述，本文没有把它写成独立实测。工具负责找引用和冲突，项目负责人仍需作决定。",
+    "claim_ids": ["C1", "C2", "C3"]
+  },
+  "visual": {
+    "purpose": "帮助读者辨认决定、建议和待确认项",
+    "prompt": "原创扁平化编辑插画，4:5 画幅，暖白底。左侧一张蓝色决定卡片，右侧一张黄色建议卡片，中间问号。留出顶部标题位置，卡片只用简单符号，中文文字后期人工排版。不使用真实品牌、头像或聊天截图。",
+    "negative_prompt": "无真实客户名称、无个人资料、无品牌标志、不伪造消息截图、不生成小号乱码文字",
+    "alt_text": "蓝色决定卡片与黄色建议卡片并列，中间是待确认问号",
+    "rights": "synthetic"
+  },
+  "review": {"status": "pending", "reviewer": null, "notes": "示例仅供审阅；实际发布前核对正文、权利和账号"},
+  "metrics": {"impressions": null, "clicks": null, "saves": null, "published_at": null}
+}
